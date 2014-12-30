@@ -17,10 +17,38 @@ h2 {
     margin-top: 10px;
 }
 
+hr {
+    border: 1px solid #698A54;
+}
+
+h2 > small {
+    color: #000000;
+}
+
 .panel-default {
     background-color: #A9D18E;
     border: 2px outset #698A54;
     border-radius: 0;
+}
+
+.categories-and-pages {
+    font-size: 21px;
+    padding-left: 5px;
+}
+
+.categories-and-pages:hover {
+    background-color: #DAA600;
+    outline: 1px solid #929341;
+}
+
+#login-header {
+    font-size: 21px;
+}
+
+.btn-default {
+    background-color: #70AD47;
+    color: #FFFFFF;
+    border: 1px solid #698A54;
 }
 
 img {
@@ -52,6 +80,21 @@ img {
     padding-top: 8px;
     font-size: 21px;
     float: right;
+}
+
+.pagination > li > a {
+    margin: 2px;
+    color: #000000;
+    background-color: #A9D18E;
+    border: 1px solid #698A54;
+    font-size: 16px;
+}
+
+.pagination > li > a:hover {
+    color: #FFFFFF;
+    background-color: #548235;
+    border: 1px solid #698A54;
+    font-size: 16px;
 }
 
 footer {

@@ -1,5 +1,10 @@
-var app = angular.module('ads', []);
+'use strict';
 
-app.controller('Ads', function($scope) {
+var app = angular.module('softUniProject', ['ngRoute']);
 
-});
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/', {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
+    });
+}]);

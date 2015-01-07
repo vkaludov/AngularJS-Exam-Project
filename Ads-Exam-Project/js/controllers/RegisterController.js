@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('RegisterController', ['$scope', 'townsData', function($scope, townsData) {
+app.controller('RegisterController', ['$scope', 'townsData', 'userData', function($scope, townsData, userData) {
     $scope.pageTitle = 'Registration';
     
     townsData.getTowns()
@@ -10,6 +10,6 @@ app.controller('RegisterController', ['$scope', 'townsData', function($scope, to
         });
     
     $scope.register = function (user) {
-        //userData.register(user);
+        userData.register(user);
     }
 }]);

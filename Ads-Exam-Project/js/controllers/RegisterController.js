@@ -5,7 +5,6 @@ app.controller('RegisterController', ['$scope', 'townsData', function($scope, to
         .$promise
         .then(function(data) {
             $scope.towns = data;
-            console.log(data);
         });
     $scope.pageTitle = 'Registration';
 }]);

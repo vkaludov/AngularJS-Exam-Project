@@ -2,7 +2,7 @@ app.factory('townsData', ['$resource', 'baseServiceUrl', function($resource, bas
     var resource = $resource(baseServiceUrl + 'towns');
 
     function getTowns() {
-        return resource.get();
+        return resource.query();
     }
 
     return{

@@ -1,3 +1,9 @@
-/**
- * Created by VKaludov on 8.1.2015 г..
- */
+//'use strict';
+//
+//app.controller('CategoriesController', ['$scope', 'townsData', function($scope, townsData) {
+//    townsData.getTowns()
+//        .$promise
+//        .then(function (data) {
+//            $scope.adsData = data;
+//        })
+//}]);

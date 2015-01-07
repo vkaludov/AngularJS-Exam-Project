@@ -3,8 +3,11 @@
         <div class="panel-body">
             <h3 class="text-center"><strong>Towns</strong></h3>
             <hr>
+
+            <!--fix tags, cannot be paragraphs!-->
+            
             <p class="categories-and-pages"><em>All</em></p>
-            <p class="categories-and-pages">Plovdiv</p>
+            <p class="categories-and-pages" ng-repeat="town in towns">{{town.name}}</p>
         </div>
     </div>
 </div>

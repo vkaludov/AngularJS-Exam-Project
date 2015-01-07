@@ -1,9 +1,9 @@
 'use strict';
 
-app.controller('TownsController', ['$scope', 'adsData', function($scope, adsData) {
-    adsData.getAllAds()
+app.controller('TownsController', ['$scope', 'townsData', function($scope, townsData) {
+    townsData.getTowns()
         .$promise
         .then(function (data) {
-            $scope.adsData = data;
+            $scope.towns = data;
         })
 }]);

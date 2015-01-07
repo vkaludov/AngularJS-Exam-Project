@@ -1,6 +1,6 @@
 app.directive('categories', function() {
     return {
-        controller: 'HomeController',
+        controller: 'CategoriesController',
         restrict: 'E',
         templateUrl: 'templates/categories.html',
         replace: true

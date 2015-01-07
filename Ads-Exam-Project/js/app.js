@@ -4,7 +4,7 @@ var app = angular.module('softUniProject', ['ngRoute', 'ngResource', 'LocalStora
 
 app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');
 
-app.config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
+app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
@@ -20,7 +20,4 @@ app.config(['$routeProvider', 'localStorageServiceProvider', function($routeProv
     $routeProvider.otherwise({
         redirectTo: '/'
     });
-
-    localStorageServiceProvider.setStorageType('localStorage');
-    localStorageServiceProvider.setPrefix('adsApp');
 }]);

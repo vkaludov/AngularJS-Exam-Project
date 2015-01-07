@@ -11,13 +11,23 @@
         <div class="col-md-2">
             <left-sidebar></left-sidebar>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="text-center" id="login-header">Login</p>
-                    <button type="button" class="btn btn-default btn-block">Login</button>
-                    <!--<button type="button" class="btn btn-default btn-block">Register</button>-->
-                    <a href="#/register">Register here</a>
+                    <form>
+                        <div class="form-group">
+                            <label for="inputUser">Username:</label>
+                            <input type="text" class="form-control" id="inputUser" placeholder="Enter username"
+                                   ng-model="user.username">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPass">Password:</label>
+                            <input type="password" class="form-control" id="inputPass" placeholder="Enter password"
+                                   ng-model="user.password">
+                        </div>
+                        <button type="submit" class="btn btn-default" ng-click="login(user)">Login</button>
+                        <a href="#/register">Register here</a>
+                    </form>
                 </div>
             </div>
         </div>

@@ -3,12 +3,12 @@
 app.factory('adsData', ['$resource', 'baseServiceUrl', function($resource, baseServiceUrl) {
 
     var resource = $resource(
-        'http://softuni-ads.azurewebsites.net/api/user/ads/:id',
+        baseServiceUrl + 'ads/:id',
         {id: '@id'},
-        { update: {
+        {update: {
             method: 'PUT'
         }
-        });
+    });
 
     function getAllAds() {
         return resource.get();
@@ -31,9 +31,9 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', function($resource, baseS
     }
 
     return {
-        getAll: getAllAds,
+        getAllAds: getAllAds,
         create: createNewAd,
-        getById: getAdById,
+        getAdById: getAdById,
         edit: editAd,
         delete: deleteAd
     }

@@ -11,15 +11,46 @@
         <div class="col-md-2">
             <left-sidebar></left-sidebar>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="text-center" id="login-header">Registration form</p>
-                    <button type="button" class="btn btn-default btn-block">Register</button>
-                    <!--<button type="button" class="btn btn-default btn-block">Register</button>-->
-                    <a href="#/login">Login here</a>
+                    <form>
+                        <div class="form-group">
+                            <label for="inputUser">Username:</label>
+                            <input type="text" class="form-control" id="inputUser" placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPass">Password:</label>
+                            <input type="password" class="form-control" id="inputPass" placeholder="Enter password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPass">Confirm password:</label>
+                            <input type="password" class="form-control" id="confirmPass" placeholder="Confirm password">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName">Name:</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email:</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhone">Phone:</label>
+                            <input type="text" class="form-control" id="inputPhone" placeholder="Enter phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTown">Town:</label>
+                            <select class="form-control" id="inputTown" ng-options="town in towns tracked by town.id">
+                                <option ng-repeat="town in dataset"></option>
+                            </select>                            
+                        </div>
+                        <button type="submit" class="btn btn-default">Register</button>
+                        <a href="#/login">Login here</a>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

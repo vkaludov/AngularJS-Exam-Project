@@ -6,7 +6,7 @@ app.controller('LoginController', ['$scope', '$location', 'userData', function($
     $scope.login = function (user) {
         userData.login(user)
             .$promise
-            .then(function(data) {
+            .then(function() {
                $location.path('/');
             });
     }

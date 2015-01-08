@@ -1,11 +1,21 @@
-app.factory('filter', ['$resource', 'baseServiceUrl', function($resource, baseServiceUrl) {
-    var resource = $resource(baseServiceUrl + 'towns');
+app.factory('filter', function() {
+    var filterParams = {};
 
-    function getTowns() {
-        return resource.query();
+    function adsFilteredByCategory(category) {
+        filterParams.categoryId = category.id;
+    }
+
+    function adsFilteredByTown(town) {
+        filterParams.townId = town.id;
+    }
+
+    function getFilterParams() {
+        return filterParams;
     }
 
     return{
-        getTowns: getTowns
+        adsFilteredByCategory: adsFilteredByCategory,
+        adsFilteredByTown: adsFilteredByTown,
+        getFilterParams: getFilterParams
     }
-}]);
+});

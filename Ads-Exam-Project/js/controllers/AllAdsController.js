@@ -15,5 +15,9 @@ app.controller('AllAdsController', ['$scope', 'adsData', 'filter', function($sco
 
     $scope.$on('categoryClicked', function (event, category) {
         loadAllAds(filter.getFilterParams());
-    })
+    });
+
+    $scope.$on('townClicked', function (event, town) {
+        loadAllAds(filter.getFilterParams());
+    });
 }]);

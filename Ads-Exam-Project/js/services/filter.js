@@ -13,9 +13,14 @@ app.factory('filter', function() {
         return filterParams;
     }
 
+    function clearFilterParams() {
+        filterParams = {};
+    }
+
     return{
         adsFilteredByCategory: adsFilteredByCategory,
         adsFilteredByTown: adsFilteredByTown,
-        getFilterParams: getFilterParams
+        getFilterParams: getFilterParams,
+        clearFilterParams: clearFilterParams
     }
 });

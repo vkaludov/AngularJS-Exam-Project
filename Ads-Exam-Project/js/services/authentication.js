@@ -23,10 +23,15 @@ app.factory('authentication', function() {
         localStorage.removeItem(key);
     }
 
+    function isLoggedIn() {
+        return !!getUserData();
+    }
+
     return {
         saveUser: saveUserData,
         getUser: getUserData,
         getHeaders: getHeaders,
-        removeUser: removeUser
+        removeUser: removeUser,
+        isLoggedIn: isLoggedIn
     }
 });

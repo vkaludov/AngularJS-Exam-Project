@@ -2,7 +2,7 @@ app.directive('categories', function() {
     return {
         controller: 'CategoriesController',
         restrict: 'E',
-        templateUrl: 'templates/categories.html',
+        templateUrl: 'templates/directives/categories.html',
         replace: true
     };
 });

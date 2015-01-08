@@ -2,15 +2,15 @@
 
 <div class="container" id="main-div">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
             <left-sidebar ng-if="!isLoggedIn"></left-sidebar>
             <logged-in-sidebar ng-if="isLoggedIn"></logged-in-sidebar>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <all-ads></all-ads>
         </div>
-        <div class="col-md-2">
-            <!--<categories></categories>-->
+        <div class="col-md-3">
+            <categories></categories>
             <towns></towns>
         </div>
     </div>

@@ -25,18 +25,30 @@ h2 > small {
     color: #000000;
 }
 
-.panel-default {
+.panel-modified {
     background-color: #A9D18E;
     border: 2px outset #698A54;
     border-radius: 0;
 }
 
 .categories-and-pages {
+    color: #000000;
+    text-decoration: none;
     font-size: 21px;
     padding-left: 5px;
 }
 
 .categories-and-pages:hover {
+    color: #000000;
+    text-decoration: none;
+    cursor:pointer;
+    background-color: #DAA600;
+    outline: 1px solid #929341;
+}
+
+.selected {
+    color: #000000;
+    text-decoration: none;
     background-color: #DAA600;
     outline: 1px solid #929341;
 }
@@ -108,14 +120,14 @@ footer {
     margin: 5px 0 5px 0;
 }
 
-a {
-    color: #000000;
-    text-decoration: none;
-}
+/*a {*/
+    /*color: #000000;*/
+    /*text-decoration: none;*/
+/*}*/
 
-a:hover
-{
-    color: #000000;
-    text-decoration:none;
-    cursor:pointer;
-}
+/*a:hover*/
+/*{*/
+    /*color: #000000;*/
+    /*text-decoration:none;*/
+    /*cursor:pointer;*/
+/*}*/

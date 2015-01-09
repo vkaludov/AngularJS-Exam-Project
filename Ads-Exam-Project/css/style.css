@@ -72,6 +72,7 @@ h2 > small {
 .btn-block {
     margin-bottom: 15px;
     font-size: 18px;
+    border-radius: 10px;
 }
 
 #login-header {
@@ -150,7 +151,7 @@ footer {
 }
 
 .login-form-margin {
-    margin: 15px;
+    margin: 5px 15px 5px 15px;
 }
 
 .input-div {
@@ -165,5 +166,7 @@ footer {
 }
 
 .login-button {
-
+    font-size: 25px;
+    width: 35%;
+    border-radius: 10px;
 }

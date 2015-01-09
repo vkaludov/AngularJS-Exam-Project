@@ -25,14 +25,24 @@ h2 > small {
     color: #000000;
 }
 
+.panel-body {
+    word-wrap: break-word;
+}
+
 .panel-modified {
     background-color: #A9D18E;
     border: 2px outset #698A54;
     border-radius: 0;
 }
 
+.filters-style {
+    list-style-type: none;
+}
+
 .categories-and-pages {
     color: #000000;
+    margin-bottom: 15px;
+    display: block;
     text-decoration: none;
     font-size: 21px;
     padding-left: 5px;

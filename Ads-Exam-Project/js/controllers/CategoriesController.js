@@ -7,11 +7,6 @@ app.controller('CategoriesController', ['$scope', '$rootScope', 'categoriesData'
             $scope.categories = data;
         });
 
-    //$scope.allAdsClicked = function allAdsClicked() {
-    //    filter.clearFilterParams();
-    //    $rootScope.$broadcast('loadAllAds');
-    //};
-    
     $scope.categoryClicked = function categoryClicked(category) {
         filter.adsFilteredByCategory(category);
         $rootScope.$broadcast('categoryClicked', category);

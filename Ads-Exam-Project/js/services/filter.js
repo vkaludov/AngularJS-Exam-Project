@@ -2,11 +2,19 @@ app.factory('filter', function() {
     var filterParams = {};
 
     function adsFilteredByCategory(category) {
-        filterParams.categoryId = category.id;
+        if (category == null) {
+            filterParams = {};
+        } else {
+            filterParams.categoryId = category.id;
+        }
     }
 
     function adsFilteredByTown(town) {
-        filterParams.townId = town.id;
+        if (town == null) {
+            filterParams = {};
+        } else {
+            filterParams.townId = town.id;
+        }
     }
 
     function getFilterParams() {

@@ -7,7 +7,7 @@ app.controller('LoginController', ['$scope', '$location', 'userData', function($
         userData.login(user)
             .$promise
             .then(function() {
-               $location.path('/');
+               $location.path('/user/home');
             });
     }
 }]);

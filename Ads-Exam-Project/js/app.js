@@ -9,6 +9,10 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
     });
+    $routeProvider.when('/user/home', {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
+    });
     $routeProvider.when('/login', {
         templateUrl: 'templates/login.html',
         controller: 'LoginController'

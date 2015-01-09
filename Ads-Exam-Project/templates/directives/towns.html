@@ -5,7 +5,7 @@
             <hr>
             <ul style="list-style-type: none">
                 <li>
-                    <a class="categories-and-pages"><em>All</em></a>
+                    <a class="categories-and-pages" ng-click="townClicked(null)"><em>All</em></a>
                 </li>
                 <li ng-repeat="town in towns" ng-click="townClicked(town)">
                     <a class="categories-and-pages">{{town.name}}</a>

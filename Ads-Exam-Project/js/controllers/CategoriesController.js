@@ -8,6 +8,12 @@ app.controller('CategoriesController', ['$scope', '$rootScope', 'categoriesData'
         });
 
     $scope.categoryClicked = function categoryClicked(category) {
+        if (category == null) {
+            $scope.selectedCategoryId = null;
+        } else {
+            $scope.selectedCategoryId = category.id;
+        }
+
         filter.adsFilteredByCategory(category);
         $rootScope.$broadcast('categoryClicked', category);
     };

@@ -1,13 +1,17 @@
 <div>
-    <div class="panel panel-default">
+    <div class="panel panel-default panel-modified">
         <div class="panel-body">
             <h3 class="text-center"><strong>Categories</strong></h3>
             <hr>
             <ul style="list-style-type: none">
                 <li>
-                    <a class="categories-and-pages" ng-click="categoryClicked(null)"><em>All</em></a>
+                    <a class="categories-and-pages"
+                       ng-click="categoryClicked(null)"
+                       ng-class="{'selected' : selectedCategoryId == null}"><em>All</em></a>
                 </li>
-                <li ng-repeat="category in categories" ng-click="categoryClicked(category)">
+                <li ng-repeat="category in categories"
+                    ng-click="categoryClicked(category)"
+                    ng-class="{'selected' : selectedCategoryId == category.id}">
                     <a class="categories-and-pages">{{category.name}}</a>
                 </li>
             </ul>

@@ -12,9 +12,26 @@ app.factory('notifyService',
                 );
             },
             showError: function(msg, serverError) {
-                var errorMessage = serverError.data.error_description;
-                msg = msg + "<br>" + errorMessage;
+                var errorMessage = "";
+                var errors = [];
 
+                if (serverError.data.error_description != null) {
+                    errorMessage = serverError.data.error_description;
+                    errors.push(errorMessage);
+                } else {
+                    var modelStateErrors = serverError.data.modelState;
+                    for (var propertyName in modelStateErrors) {
+                        var errorMessages = modelStateErrors[propertyName];
+
+                        for (var i = 0; i < errorMessages.length; i++) {
+                            var currentError = errorMessages[i];
+                            errors.push(currentError);
+                        }
+                    }
+                }
+                if (errors.length > 0) {
+                        msg = msg + ":<br>" + errors.join("<br>");
+                }
                 noty({
                         text: msg,
                         type: 'error',

@@ -1,6 +1,7 @@
 'use strict';
 
-app.controller('RegisterController', ['$scope', '$location', 'townsData', 'userData', function($scope, $location, townsData, userData) {
+app.controller('RegisterController', ['$scope', '$location', 'townsData', 'userData', 'notifyService',
+                function($scope, $location, townsData, userData, notifyService) {
     townsData.getTowns()
         .$promise
         .then(function(data) {
@@ -11,7 +12,11 @@ app.controller('RegisterController', ['$scope', '$location', 'townsData', 'userD
         userData.register(user)
             .$promise
             .then(function() {
+                notifyService.showInfo("Registration successful.");
                 $location.path('/user/home');
+            },
+            function (serverError) {
+                notifyService.showError("Registration failed:", serverError);
             });
     }
 }]);

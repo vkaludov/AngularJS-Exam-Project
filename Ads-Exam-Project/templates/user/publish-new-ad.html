@@ -1,0 +1,42 @@
+<page-header page-title="'Publish New Ad'"></page-header>
+
+<div class="container" id="main-div">
+    <div class="row">
+        <div class="col-md-3">
+            <logged-in-sidebar></logged-in-sidebar>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" class="form-control" id="title" ng-model="user.username">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Text:</label>
+                            <input type="text" class="form-control" id="description" ng-model="user.password">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category:</label>
+                            <!--ng-model="adData.categoryId"-->
+                            <select class="form-control" id="category" >
+                                <option value="null">(None)</option>
+                                <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                        <label for="town">Town:</label>
+                        <select class="form-control" id="town" ng-options="town.id as town.name for town in towns"
+                                ng-model="user.townId">
+                        </select>
+                    </div>
+                        <button type="submit" class="btn btn-default" ng-click="login(user)">Login</button>
+                        <a href="#/register">Register here</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

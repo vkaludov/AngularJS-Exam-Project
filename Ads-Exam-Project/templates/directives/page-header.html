@@ -3,12 +3,14 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>
-                    <strong>Ads</strong>
-                    <span ng-if="pageTitle"><strong> &ndash; {{pageTitle}}</strong></span>
+                    <span class="page-header-span">
+                        <strong>Ads</strong>
+                        <span ng-if="pageTitle"><strong> &ndash; {{pageTitle}}</strong></span>
+                    </span>
 
-                    <span ng-if="isLoggedIn">
-                        <span style="margin-left: 50px">{{getUsername}}</span>
-                        <a ng-click="logout()" style="margin-left: 10px">Logout</a>
+                    <span ng-if="isLoggedIn" class="header-additional-info">
+                        <span class="username-style"><strong>{{getUsername}}</strong></span>
+                        <a ng-click="logout()">Logout</a>
                     </span>
 
                 </h2>

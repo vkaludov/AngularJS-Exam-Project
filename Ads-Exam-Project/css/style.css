@@ -107,3 +107,15 @@ footer {
     font-size: 20px;
     margin: 5px 0 5px 0;
 }
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: #000000;
+    text-decoration:none;
+    cursor:pointer;
+}

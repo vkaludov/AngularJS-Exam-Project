@@ -17,20 +17,23 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'authentication', functi
             .save(user);
 
         resource.$promise
-            .then(function(data) {
-                authentication.saveUser(data);
-            });
+                .then(function(data) {
+                    authentication.saveUser(data);
+                });
 
         return resource;
     }
 
     function userLogout(user) {
-        return $resource(baseServiceUrl + 'user/logout')
-            .save(user)
-            .$promise
-            .then(function() {
+        var resource = $resource(baseServiceUrl + 'user/logout')
+            .save(user);
+
+        resource.$promise
+                .then(function() {
                 authentication.removeUser();
-            });
+                });
+
+        return resource;
     }
 
     return{

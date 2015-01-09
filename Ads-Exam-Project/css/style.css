@@ -161,12 +161,18 @@ footer {
 .form-control-modified {
     border-radius: 0;
     height: 50%;
-    font-size: 21px;
+    font-size: 25px;
     font-weight: bold;
+    border: 1px solid #698A54;
 }
 
 .login-button {
-    font-size: 25px;
+    font-size: 22px;
     width: 35%;
     border-radius: 10px;
+}
+
+.register-link {
+    float: right;
+    font-size: 22px;
 }

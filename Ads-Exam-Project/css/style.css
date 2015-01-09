@@ -63,6 +63,10 @@ h2 > small {
     outline: 1px solid #929341;
 }
 
+.btn-block {
+    margin-bottom: 15px;
+}
+
 #login-header {
     font-size: 21px;
 }

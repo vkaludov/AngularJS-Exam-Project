@@ -11,5 +11,10 @@ app.controller('RegisterController', ['$scope', 'townsData', 'userData', functio
     
     $scope.register = function (user) {
         userData.register(user);
+        //var userDetails = {
+        //    username: user.username,
+        //    password: user.password
+        //};
+        //userData.login(userDetails);
     }
 }]);

@@ -1,6 +1,7 @@
 'use strict';
 
-app.controller('HomeController', ['$scope', '$location', 'authentication', 'userData', function($scope, $location, authentication, userData) {
+app.controller('HomeController', ['$scope', '$location', 'authentication', 'userData', 'notifyService',
+    function($scope, $location, authentication, userData, notifyService) {
     $scope.isLoggedIn = authentication.isLoggedIn();
 
     $scope.getUsername = authentication.getUsername();
@@ -9,6 +10,7 @@ app.controller('HomeController', ['$scope', '$location', 'authentication', 'user
         userData.logout()
             .$promise
             .then(function() {
+                notifyService.showInfo("You logged out successfully.");
                 $location.path('/logout');
             });
     };

@@ -27,11 +27,19 @@ app.factory('authentication', function() {
         return !!getUserData();
     }
 
+    function getUsername() {
+        if (isLoggedIn()) {
+            var userData = getUserData();
+            return userData.username;
+        }
+    }
+
     return {
         saveUser: saveUserData,
         getUser: getUserData,
         getHeaders: getHeaders,
         removeUser: removeUser,
-        isLoggedIn: isLoggedIn
+        isLoggedIn: isLoggedIn,
+        getUsername: getUsername
     }
 });

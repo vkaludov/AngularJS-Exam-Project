@@ -3,6 +3,8 @@
 app.controller('HomeController', ['$scope', '$location', 'authentication', 'userData', function($scope, $location, authentication, userData) {
     $scope.isLoggedIn = authentication.isLoggedIn();
 
+    $scope.getUsername = authentication.getUsername();
+
     $scope.logout = function () {
         userData.logout()
             .$promise

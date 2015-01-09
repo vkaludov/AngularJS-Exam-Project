@@ -8,6 +8,12 @@ app.controller('TownsController', ['$scope', '$rootScope', 'townsData', 'filter'
         });
 
     $scope.townClicked = function townClicked(town) {
+        if (town == null) {
+            $scope.selectedTownId = null;
+        } else {
+            $scope.selectedTownId = town.id;
+        }
+
         filter.adsFilteredByTown(town);
         $rootScope.$broadcast('townClicked', town);
     }

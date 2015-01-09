@@ -9,10 +9,6 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
     });
-    $routeProvider.when('/user/home', {
-        templateUrl: 'templates/home.html',
-        controller: 'HomeController'
-    });
     $routeProvider.when('/login', {
         templateUrl: 'templates/login.html',
         controller: 'LoginController'
@@ -24,6 +20,18 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/logout', {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
+    });
+    $routeProvider.when('/user/home', {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
+    });
+    $routeProvider.when('/user/ads', {
+        templateUrl: 'templates/user/publish-new-ad.html',
+        controller: 'ListUserAdsController'
+    });
+    $routeProvider.when('/user/ads/publish', {
+        templateUrl: 'templates/user/publish-new-ad.html',
+        controller: 'PublishNewAdController'
     });
     $routeProvider.otherwise({
         redirectTo: '/'

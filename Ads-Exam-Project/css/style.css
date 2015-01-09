@@ -78,8 +78,12 @@ h2 > small {
 }
 
 img {
-    max-height: 180px;
+    max-height: 200px;
     margin: 10px auto;
+}
+
+.floating-div {
+    float: right;
 }
 
 .content-wrapper {
@@ -133,15 +137,3 @@ footer {
     font-size: 20px;
     margin: 5px 0 5px 0;
 }
-
-/*a {*/
-    /*color: #000000;*/
-    /*text-decoration: none;*/
-/*}*/
-
-/*a:hover*/
-/*{*/
-    /*color: #000000;*/
-    /*text-decoration:none;*/
-    /*cursor:pointer;*/
-/*}*/

@@ -5,8 +5,8 @@ app.controller('HomeController', ['$scope', '$location', 'authentication', 'user
 
     $scope.isLoggedIn = authentication.isLoggedIn();
 
-    $scope.logout = function (user) {
-        userData.logout(user)
+    $scope.logout = function () {
+        userData.logout()
             .$promise
             .then(function() {
                 $location.path('/logout');

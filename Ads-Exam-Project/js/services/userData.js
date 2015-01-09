@@ -24,9 +24,16 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'authentication', functi
         return resource;
     }
 
-    function userLogout(user) {
-        var resource = $resource(baseServiceUrl + 'user/logout')
-            .save(user);
+    function userLogout() {
+        var headers = authentication.getHeaders();
+        var resource = $resource(baseServiceUrl + 'user/logout', null,
+            {
+                save: {
+                    method: 'POST',
+                    headers: headers
+                }
+            })
+            .save();
 
         resource.$promise
                 .then(function() {

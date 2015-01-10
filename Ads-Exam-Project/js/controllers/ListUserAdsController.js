@@ -20,11 +20,21 @@ app.controller('ListUserAdsController', ['$scope', 'userService', 'notifyService
 
     getUserAds();
 
-    $scope.deactivateAd= function (id){
+    $scope.deactivateAd = function (id){
         userService.deactivateAd(id)
             .$promise
             .then(function (data) {
-                notifyService.showInfo("Ad deactivated successfully.")
+                notifyService.showInfo("Ad deactivated successfully.");
+                getUserAds();
             });
     }
+
+    //$scope.deactivateAd = function (id){
+    //    userService.deactivateAd(id)
+    //        .$promise
+    //        .then(function (data) {
+    //            notifyService.showInfo("Ad deactivated successfully.");
+    //            getUserAds();
+    //        });
+    //}
 }]);

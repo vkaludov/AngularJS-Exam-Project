@@ -30,7 +30,7 @@ app.factory('notifyService',
                     }
                 }
                 if (errors.length > 0) {
-                        msg = msg + ":<br>" + errors.join("<br>");
+                        msg = msg + "<br>" + errors.join("<br>");
                 }
                 noty({
                         text: msg,

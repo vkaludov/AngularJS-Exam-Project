@@ -134,13 +134,21 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
         return resource;
     }
 
-    function editAd(id) {
+    function editAd(userAd, changeImage) {
         var headers = authentication.getHeaders();
-        var resource = $resource(baseServiceUrl + 'user/ads/' + id, null,
+        var resource = $resource(baseServiceUrl + 'user/ads/' + userAd.id, null,
             {
                 save: {
                     method: 'PUT',
-                    headers: headers
+                    headers: headers,
+                    params: {
+                        Title: userAd.title,
+                        Text: userAd.text,
+                        ChangeImage: changeImage,
+                        //ImageDataUrl: null,
+                        CategoryId: userAd.categoryId,
+                        TownId: userAd.townId
+                    }
                 }
             })
             .save();

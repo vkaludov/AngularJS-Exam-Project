@@ -1,4 +1,104 @@
 <page-header page-title="'Edit Ad'"></page-header>
 
-<logged-in-sidebar></logged-in-sidebar>
+<div class="container" id="main-div">
+    <div class="row">
+        <div class="col-md-3">
+            <logged-in-sidebar></logged-in-sidebar>
+        </div>
 
+        <div class="col-md-9">
+            <div class="panel panel-default login-panel-modified">
+                <div class="panel-body login-form-margin">
+                    <h2 class="text-center"><strong>Edit Ad</strong></h2>
+                    <hr>
+
+                    <form>
+                        <div class="row">
+                            <div class="form-group publish-input-div">
+                                <div class="col-md-9">
+                                    <div class="row publish-input-div">
+                                        <div class="col-md-2 label-div">
+                                            <label for="title" class="label-style">Title:</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control form-control-modified" id="title"
+                                                   ng-model="userAd.title" required>
+                                        </div>
+                                    </div>
+                                    <div class="row publish-input-div">
+                                        <div class="col-md-2 label-div">
+                                            <label for="text" class="label-style">Text:</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control form-control-modified-textarea" id="text"
+                                                      ng-model="userAd.text" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="panel-body panel-modified">
+                                        <img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/kfpanda-150px.jpg" class="img-responsive" alt="Responsive image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group publish-input-div">
+                                <div class="col-md-9">
+                                    <div class="row publish-input-div">
+                                        <div class="col-md-2 label-div">
+                                            <label for="image" class="label-style">Image:</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control form-control-modified" id="image" ng-model="userAd.image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group publish-input-div">
+                                <div class="col-md-2 label-div">
+                                    <label for="category" class="label-style">Category:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select class="form-control form-control-modified" id="category" ng-model="userAd.categoryId">
+                                        <option value="null">(None)</option>
+                                        <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group publish-input-div">
+                                <div class="col-md-2 label-div">
+                                    <label for="town" class="label-style">Town:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select class="form-control form-control-modified" id="town" ng-model="userAd.townId">
+                                        <option value="null">(None)</option>
+                                        <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-default publish-page-buttons" ng-click="editAd(userAd)">Edit</button>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="btn btn-default publish-page-buttons" href="#/user/home" ng-click="">Cancel</a>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

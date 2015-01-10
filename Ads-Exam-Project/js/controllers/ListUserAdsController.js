@@ -46,12 +46,4 @@ app.controller('ListUserAdsController', ['$scope', 'userService', 'notifyService
                 getUserAds();
             });
     };
-
-    $scope.getUserAdById = function (id){
-        userService.getUserAdById(id)
-            .$promise
-            .then(function (data) {
-                $scope.requestedUserAd = data;
-            });
-    };
 }]);

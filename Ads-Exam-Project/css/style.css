@@ -175,6 +175,15 @@ footer {
     border: 1px solid #698A54;
 }
 
+.form-control-modified-textarea {
+    border-radius: 0;
+    height: 110px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid #698A54;
+    margin-bottom: 25px;
+}
+
 .login-button {
     font-size: 22px;
     width: 35%;
@@ -208,4 +217,23 @@ footer {
 
 .page-header-span {
     margin-left: 100px;
+}
+
+.publish-input-div {
+    height: 60px;
+}
+
+.label-div {
+    padding: 0;
+}
+
+.label-div > label {
+    float: right;
+}
+
+.publish-page-buttons {
+    font-size: 22px;
+    padding: 10px 30px 10px 30px;
+    margin: 10px 0 10px 40px;
+    border-radius: 10px;
 }

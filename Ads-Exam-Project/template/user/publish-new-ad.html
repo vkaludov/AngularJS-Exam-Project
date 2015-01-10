@@ -19,7 +19,8 @@
                                     <label for="title" class="label-style">Title:</label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control form-control-modified" id="title">
+                                    <input type="text" class="form-control form-control-modified" id="title"
+                                           ng-model="adData.title" required>
                                 </div>
                             </div>
                         </div>
@@ -30,7 +31,8 @@
                                 <label for="text" class="label-style">Text:</label>
                             </div>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control form-control-modified-textarea" id="text">
+                                    <textarea class="form-control form-control-modified-textarea" id="text"
+                                           ng-model="adData.text" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +43,7 @@
                                     <label for="image" class="label-style">Image:</label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control form-control-modified" id="image">
+                                    <input type="text" class="form-control form-control-modified" id="image" ng-model="adData.image">
                                 </div>
                             </div>
                         </div>
@@ -52,9 +54,9 @@
                                     <label for="category" class="label-style">Category:</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <select class="form-control form-control-modified" id="category"
-                                            ng-options="category.id as category.name for category in categories"
-                                            ng-model="townId">
+                                    <select class="form-control form-control-modified" id="category" ng-model="adData.categoryId">
+                                        <option value="null">(None)</option>
+                                        <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -66,9 +68,9 @@
                                     <label for="town" class="label-style">Town:</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <select class="form-control form-control-modified" id="town"
-                                            ng-options="town.id as town.name for town in towns"
-                                            ng-model="townId">
+                                    <select class="form-control form-control-modified" id="town" ng-model="adData.townId">
+                                        <option value="null">(None)</option>
+                                        <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -77,46 +79,13 @@
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-default publish-page-buttons" ng-click="">Publish</button>
+                                <button type="submit" class="btn btn-default publish-page-buttons" ng-click="publishAd(adData)">Publish</button>
                             </div>
                             <div class="col-md-4">
                                 <a class="btn btn-default publish-page-buttons" href="#/user/home" ng-click="">Cancel</a>
                             </div>
                             <div class="col-md-2"></div>
                         </div>
-
-
-                        <!--<div class="form-group">-->
-                            <!--<label for="title">Title:</label>-->
-                            <!--<input type="text" class="form-control" id="title" ng-model="user.username">-->
-                        <!--</div>-->
-
-                        <!--<div class="form-group">-->
-                            <!--<label for="description">Text:</label>-->
-                            <!--<input type="text" class="form-control" id="description" ng-model="user.password">-->
-                        <!--</div>-->
-
-                        <!--<div class="form-group">-->
-                            <!--<label for="category">Category:</label>-->
-                            <!--&lt;!&ndash;ng-model="adData.categoryId"&ndash;&gt;-->
-                            <!--<select class="form-control" id="category" >-->
-                                <!--<option value="null">(None)</option>-->
-                                <!--<option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>-->
-                            <!--</select>-->
-                        <!--</div>-->
-
-                        <!--<div class="form-group">-->
-                            <!--<label for="towns">Town:</label>-->
-                            <!--&lt;!&ndash;ng-model="adData.categoryId"&ndash;&gt;-->
-                            <!--<select class="form-control" id="towns" >-->
-                                <!--<option value="null">(None)</option>-->
-                                <!--<option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>-->
-                            <!--</select>-->
-                        <!--</div>-->
-
-                        <!--&lt;!&ndash;Modify buttons!!&ndash;&gt;-->
-                        <!--<button type="submit" class="btn btn-default" ng-click="login(user)">Publish</button>-->
-                        <!--<a href="#/register">Cancel</a>-->
                     </form>
                 </div>
             </div>

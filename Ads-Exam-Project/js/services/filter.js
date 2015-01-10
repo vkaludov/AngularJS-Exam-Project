@@ -1,28 +1,28 @@
 app.factory('filter', function() {
-    var filterParams = {};
+    var params = {};
 
     function adsFilteredByCategory(category) {
         if (category == null) {
-            filterParams = {};
+            params = {};
         } else {
-            filterParams.categoryId = category.id;
+            params.categoryId = category.id;
         }
     }
 
     function adsFilteredByTown(town) {
         if (town == null) {
-            filterParams = {};
+            params = {};
         } else {
-            filterParams.townId = town.id;
+            params.townId = town.id;
         }
     }
 
     function getFilterParams() {
-        return filterParams;
+        return params;
     }
 
     function clearFilterParams() {
-        filterParams = {};
+        params = {};
     }
 
     return{

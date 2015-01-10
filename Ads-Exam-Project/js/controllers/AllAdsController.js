@@ -18,7 +18,7 @@ app.controller('AllAdsController', ['$scope', 'adsData', 'filter', function($sco
     loadAllAds();
 
     $scope.pageChanged = function () {
-        console.log("Raboti mama mu da iba!")
+
     };
 
     $scope.$on('categoryClicked', function (event, category) {

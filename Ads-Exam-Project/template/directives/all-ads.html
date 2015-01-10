@@ -44,17 +44,11 @@
                 </div>
             </div>
         </div>
+        <pagination page="startPage"
+                    items-per-page="pageSize"
+                    total-items="adsData.numItems"
+                    ng-change="pageChanged()"
+                    ng-model="currentPage">
+        </pagination>
     </div>
-
-    <!--<nav class="text-center">-->
-    <!--<ul class="pagination">-->
-    <!--<li><a href="#">First</a></li>-->
-    <!--<li><a href="#">Previous</a></li>-->
-    <!--<li><a href="#">1</a></li>-->
-    <!--<li><a href="#">2</a></li>-->
-    <!--<li><a href="#">Next</a></li>-->
-    <!--<li><a href="#">Last</a></li>-->
-    <!--</ul>-->
-    <!--</nav>-->
-    <!--</div>-->
 </div>

@@ -5,7 +5,7 @@ app.directive('pageHeader', function() {
             pageTitle: '=pageTitle'
         },
         restrict: 'E',
-        templateUrl: 'templates/directives/page-header.html',
+        templateUrl: 'template/directives/page-header.html',
         replace: true
     };
 });

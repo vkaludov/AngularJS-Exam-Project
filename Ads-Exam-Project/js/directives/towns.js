@@ -2,7 +2,7 @@ app.directive('towns', function() {
     return {
         controller: 'TownsController',
         restrict: 'E',
-        templateUrl: 'templates/directives/towns.html',
+        templateUrl: 'template/directives/towns.html',
         replace: true
     };
 });

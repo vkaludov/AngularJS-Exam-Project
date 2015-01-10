@@ -5,41 +5,114 @@
         <div class="col-md-3">
             <logged-in-sidebar></logged-in-sidebar>
         </div>
-        <div class="col-md-6">
-            <div class="panel panel-default panel-modified">
-                <div class="panel-body">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <div class="panel panel-default login-panel-modified">
+                <div class="panel-body login-form-margin">
+                    <h2 class="text-center"><strong>Publish New Ad</strong></h2>
+                    <hr>
+
                     <form>
-                        <div class="form-group">
-                            <label for="title">Title:</label>
-                            <input type="text" class="form-control" id="title" ng-model="user.username">
+                        <div class="row">
+                            <div class="form-group input-div">
+                                <div class="col-md-2">
+                                    <label for="title" class="label-style">Title:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-modified" id="title">
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="description">Text:</label>
-                            <input type="text" class="form-control" id="description" ng-model="user.password">
+                        <div class="row">
+                            <div class="form-group input-div">
+                                <div class="col-md-2">
+                                <label for="text" class="label-style">Text:</label>
+                            </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-modified" id="text">
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="category">Category:</label>
-                            <!--ng-model="adData.categoryId"-->
-                            <select class="form-control" id="category" >
-                                <option value="null">(None)</option>
-                                <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
-                            </select>
+                        <div class="row">
+                            <div class="form-group input-div">
+                                <div class="col-md-2">
+                                    <label for="image" class="label-style">Image:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-modified" id="image">
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="towns">Town:</label>
-                            <!--ng-model="adData.categoryId"-->
-                            <select class="form-control" id="towns" >
-                                <option value="null">(None)</option>
-                                <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
-                            </select>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="category" class="label-style">Category:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <select class="form-control form-control-modified" id="category"
+                                        ng-options="category.id as category.name for category in categories"
+                                        ng-model="townId">
+                                </select>
+                            </div>
                         </div>
 
-                        <!--Modify buttons!!-->
-                        <button type="submit" class="btn btn-default" ng-click="login(user)">Publish</button>
-                        <a href="#/register">Cancel</a>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="town" class="label-style">Town:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <select class="form-control form-control-modified" id="town"
+                                        ng-options="town.id as town.name for town in towns"
+                                        ng-model="townId">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-default" ng-click="">Publish</button>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="btn btn-default" href="#/user/home" ng-click="">Cancel</a>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+
+                        <!--<div class="form-group">-->
+                            <!--<label for="title">Title:</label>-->
+                            <!--<input type="text" class="form-control" id="title" ng-model="user.username">-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group">-->
+                            <!--<label for="description">Text:</label>-->
+                            <!--<input type="text" class="form-control" id="description" ng-model="user.password">-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group">-->
+                            <!--<label for="category">Category:</label>-->
+                            <!--&lt;!&ndash;ng-model="adData.categoryId"&ndash;&gt;-->
+                            <!--<select class="form-control" id="category" >-->
+                                <!--<option value="null">(None)</option>-->
+                                <!--<option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group">-->
+                            <!--<label for="towns">Town:</label>-->
+                            <!--&lt;!&ndash;ng-model="adData.categoryId"&ndash;&gt;-->
+                            <!--<select class="form-control" id="towns" >-->
+                                <!--<option value="null">(None)</option>-->
+                                <!--<option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+
+                        <!--&lt;!&ndash;Modify buttons!!&ndash;&gt;-->
+                        <!--<button type="submit" class="btn btn-default" ng-click="login(user)">Publish</button>-->
+                        <!--<a href="#/register">Cancel</a>-->
                     </form>
                 </div>
             </div>

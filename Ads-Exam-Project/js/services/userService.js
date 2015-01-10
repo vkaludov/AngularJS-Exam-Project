@@ -22,6 +22,42 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
         return resource;
     }
 
+    function getUserAds(status, startPage, pageSize) {
+        if (status == 'all'){
+            status = '';
+        }
+
+        if (Number(startPage) < 0 || Number(startPage) > 100000){
+            startPage = 1;
+        }
+
+        if (Number(pageSize) < 0 || Number(pageSize) > 1000){
+            pageSize = 4;
+        }
+
+        var headers = authentication.getHeaders();
+        var resource = $resource(baseServiceUrl + 'user/ads', null,
+            {
+                save: {
+                    method: 'GET',
+                    headers: headers,
+                    params: {
+                        Status: status,
+                        StartPage: startPage,
+                        PageSize: pageSize
+                    }
+                }
+            })
+            .save();
+
+        resource.$promise
+            .then(function(data) {
+                handleSuccess(data);
+            });
+
+        return resource;
+    }
+
     function handleSuccess(response) {
         return(response.data);
 
@@ -29,19 +65,12 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
 
     return {
         createNewAd: createNewAd,
+        getUserAds: getUserAds,
         handleSuccess: handleSuccess
     }
 }]);
 
-//getUserAds: function (params, success, error) {
-//    var request = {
-//        method: 'GET',
-//        url: baseServiceUrl + '/api/user/ads',
-//        headers: authService.getAuthHeaders(),
-//        params: params
-//    };
-//    $http(request).success(success).error(error);
-//},
+
 //
 //deactivateAd: function (id, success, error) {
 //    // TODO

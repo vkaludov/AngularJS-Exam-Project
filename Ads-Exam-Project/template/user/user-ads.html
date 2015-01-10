@@ -1,3 +1,46 @@
 <div>
-    Raboti maina!!!!!
+    <div class="panel panel-default panel-modified" ng-repeat="ad in userAds.ads">
+        <div class="panel-body">
+            <h2><strong>{{ad.title}}</strong><small class="pull-right">{{ad.date | date:'d-MMM-yyyy'}}</small></h2>
+
+            <div class="col-md-4">
+                <div class="panel panel-default panel-modified content-wrapper">
+                    <div class="panel-body">
+                        <img src="{{ad.imageDataUrl}}" class="img-responsive" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 floating-div">
+                <p class="ad-description">{{ad.text}}</p>
+            </div>
+
+            <div class="col-md-8 floating-div">
+                <div class="col-md-2 contact-label-div">
+                    <p class="contact-label">Name</p>
+                </div>
+                <div class="col-md-10 contact-details">
+                    <p class="ad-description">{{ad.ownerName}}</p>
+                </div>
+            </div>
+
+            <div class="col-md-8 floating-div">
+                <div class="col-md-2 contact-label-div">
+                    <p class="contact-label">Email:</p>
+                </div>
+                <div class="col-md-10 contact-details">
+                    <p class="ad-description"><a href="#">{{ad.ownerEmail}}</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-8 floating-div">
+                <div class="col-md-2 contact-label-div">
+                    <p class="contact-label">Tel.</p>
+                </div>
+                <div class="col-md-10 contact-details">
+                    <p class="ad-description">{{ad.ownerPhone}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

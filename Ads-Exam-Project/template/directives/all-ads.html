@@ -47,6 +47,7 @@
         <pagination page="startPage"
                     items-per-page="pageSize"
                     total-items="adsData.numItems"
+                    boundary-links="true"
                     ng-change="pageChanged()"
                     ng-model="currentPage">
         </pagination>

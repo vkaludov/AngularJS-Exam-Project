@@ -5,10 +5,10 @@ app.controller('AllAdsController', ['$scope', 'adsData', 'filter', function($sco
     $scope.startPage = 1;
     $scope.pageSize = 10;
 
-    function loadAllAds(filterParams) {
-        filterParams = filterParams || {};
+    function loadAllAds(params) {
+        params = params || {};
 
-        adsData.getAllAds(filterParams)
+        adsData.getAllAds(params)
             .$promise
             .then(function (data) {
                 $scope.adsData = data;
@@ -18,7 +18,8 @@ app.controller('AllAdsController', ['$scope', 'adsData', 'filter', function($sco
     loadAllAds();
 
     $scope.pageChanged = function () {
-
+        filter.setPageParams({startPage: $scope.currentPage, pageSize: numItems / numPages});
+        adsData.getAllAds(filter.getFilterParams())
     };
 
     $scope.$on('categoryClicked', function (event, category) {

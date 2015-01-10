@@ -136,22 +136,22 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
 
     function editAd(userAd, changeImage) {
         var headers = authentication.getHeaders();
+        var data = {
+            Title: userAd.title,
+            Text: userAd.text,
+            ChangeImage: changeImage,
+            //ImageDataUrl: null,
+            CategoryId: userAd.categoryId,
+            TownId: userAd.townId
+        };
         var resource = $resource(baseServiceUrl + 'user/ads/' + userAd.id, null,
             {
                 save: {
                     method: 'PUT',
-                    headers: headers,
-                    params: {
-                        Title: userAd.title,
-                        Text: userAd.text,
-                        ChangeImage: changeImage,
-                        //ImageDataUrl: null,
-                        CategoryId: userAd.categoryId,
-                        TownId: userAd.townId
-                    }
+                    headers: headers
                 }
             })
-            .save();
+            .save(data);
 
         resource.$promise
             .then(function(data) {

@@ -33,8 +33,8 @@ app.controller('EditAdController', ['$scope', '$routeParams', '$location', 'user
     $scope.editAd = function (userAd){
         userService.editAd(userAd, $scope.changeImage)
             .$promise
-            .then(function (data) {
-                notifyService.showInfo("Ad editted successfully.");
+            .then(function() {
+                notifyService.showInfo("Ad edited successfully.");
                 $location.path("/user/ads");
             });
     };

@@ -1,36 +1,50 @@
 <div>
     <div class="panel panel-default panel-modified" ng-repeat="ad in userAds.ads">
         <div class="panel-body">
-            <h2><strong>{{ad.title}}</strong><small class="pull-right">{{ad.date | date:'d-MMM-yyyy'}}</small></h2>
+            <div class="col-md-9 verticalLine">
+                <h2><strong>{{ad.title}}</strong><small class="pull-right">{{ad.date | date:'d-MMM-yyyy'}}</small></h2>
 
-            <div class="col-md-4">
-                <div class="panel panel-default panel-modified content-wrapper">
-                    <div class="panel-body">
-                        <img src="{{ad.imageDataUrl}}" class="img-responsive" alt="Responsive image">
+                <div class="col-md-4">
+                    <div class="panel panel-default panel-modified content-wrapper">
+                        <div class="panel-body">
+                            <img src="{{ad.imageDataUrl}}" class="img-responsive" alt="Responsive image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 floating-div">
+                    <p class="ad-description">{{ad.text}}</p>
+                </div>
+
+                <div class="col-md-8 floating-div">
+                    <div class="col-md-2 contact-label-div">
+                        <p class="contact-label">Category:</p>
+                    </div>
+                    <div class="col-md-10 contact-details">
+                        <p class="ad-description">{{ad.categoryName}}</p>
+                    </div>
+                </div>
+
+                <div class="col-md-8 floating-div">
+                    <div class="col-md-2 contact-label-div">
+                        <p class="contact-label">Town:</p>
+                    </div>
+                    <div class="col-md-10 contact-details">
+                        <p class="ad-description">{{ad.townName}}</p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-8 floating-div">
-                <p class="ad-description">{{ad.text}}</p>
-            </div>
-
-            <div class="col-md-8 floating-div">
-                <div class="col-md-2 contact-label-div">
-                    <p class="contact-label">Category:</p>
-                </div>
-                <div class="col-md-10 contact-details">
-                    <p class="ad-description">{{ad.categoryName}}</p>
-                </div>
-            </div>
-
-            <div class="col-md-8 floating-div">
-                <div class="col-md-2 contact-label-div">
-                    <p class="contact-label">Town:</p>
-                </div>
-                <div class="col-md-10 contact-details">
-                    <p class="ad-description">{{ad.townName}}</p>
-                </div>
+            <div class="col-md-3">
+                <h3 class="ad-status-header">Status:</h3>
+                <p class="ad-description ad-status">{{ad.status}}</p>
+                <button ng-if="ad.status == 'WaitingApproval' || ad.status == 'Published'" type="submit"
+                        class="btn btn-default deactivate-button" ng-click="deactivateAd(ad.id)">Deactivate</button>
+                <button ng-if="ad.status == 'Inactive'" type="submit"
+                class="btn btn-default deactivate-button" ng-click="editAd(ad.id)">Edit</button>
+                <button ng-if="ad.status == 'Inactive'" type="submit"
+                        class="btn btn-default deactivate-button" ng-click="deactivateAd(ad.id)">Publish Again</button>
+                <button ng-if="ad.status == 'Inactive'" type="submit"
+                        class="btn btn-default deactivate-button" ng-click="deleteAd(ad.id)">Delete</button>
             </div>
         </div>
     </div>

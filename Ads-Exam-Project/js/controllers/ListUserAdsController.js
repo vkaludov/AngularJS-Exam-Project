@@ -1,4 +1,4 @@
-app.controller('ListUserAdsController', ['$scope', 'userService', function($scope, userService) {
+app.controller('ListUserAdsController', ['$scope', 'userService', 'notifyService', function($scope, userService, notifyService) {
 
     $scope.statusList = [
         {id: 0, name: 'Inactive'},
@@ -19,4 +19,12 @@ app.controller('ListUserAdsController', ['$scope', 'userService', function($scop
     }
 
     getUserAds();
+
+    $scope.deactivateAd= function (id){
+        userService.deactivateAd(id)
+            .$promise
+            .then(function (data) {
+                notifyService.showInfo("Ad deactivated successfully.")
+            });
+    }
 }]);

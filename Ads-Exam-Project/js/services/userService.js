@@ -58,24 +58,38 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
         return resource;
     }
 
+    function deactivateAd(id) {
+        var headers = authentication.getHeaders();
+        var resource = $resource(baseServiceUrl + 'user/ads/deactivate/' + id, null,
+            {
+                save: {
+                    method: 'PUT',
+                    headers: headers
+                }
+            })
+            .save();
+
+        resource.$promise
+            .then(function(data) {
+                handleSuccess(data);
+            });
+
+        return resource;
+    }
+
     function handleSuccess(response) {
         return(response.data);
-
     }
 
     return {
         createNewAd: createNewAd,
         getUserAds: getUserAds,
+        deactivateAd: deactivateAd,
         handleSuccess: handleSuccess
     }
 }]);
 
 
-//
-//deactivateAd: function (id, success, error) {
-//    // TODO
-//},
-//
 //publishAgainAd: function (id, success, error) {
 //    // TODO
 //}

@@ -8,13 +8,15 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
             {
                 save: {
                     method: 'POST',
-                    headers: headers
+                    headers: headers,
+                    data: adData
                 }
             })
             .save(adData);
 
-        resource.$promise.then(function() {
-                    handleSuccess();
+        resource.$promise
+                .then(function(data) {
+                    handleSuccess(data);
                 });
 
         return resource;
@@ -25,21 +27,9 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
 
     }
 
-    //function handleErrorTypeTwo(response) {
-    //
-    //    if (!angular.isObject(response.data) || !response.data.message) {
-    //        return ($q.reject( "An unknown error occurred." ) );
-    //    }
-    //
-    //    // Otherwise, use expected error message.
-    //    return( $q.reject( response.data.modelState ) );
-    //
-    //}
-
     return {
         createNewAd: createNewAd,
         handleSuccess: handleSuccess
-        //handleErrorTypeTwo: handleErrorTypeTwo
     }
 }]);
 

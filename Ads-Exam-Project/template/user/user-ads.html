@@ -39,8 +39,8 @@
                 <p class="ad-description ad-status">{{ad.status}}</p>
                 <button ng-if="ad.status == 'WaitingApproval' || ad.status == 'Published'" type="submit"
                         class="btn btn-default deactivate-button" ng-click="deactivateAd(ad.id)">Deactivate</button>
-                <button ng-if="ad.status == 'Inactive'" type="submit"
-                        class="btn btn-default other-user-buttons" ng-click="editAd(ad.id)">Edit</button>
+                <a ng-if="ad.status == 'Inactive'" type="submit"
+                        class="btn btn-default other-user-buttons" href="#/user/ads/edit/:id">Edit</a>
                 <button ng-if="ad.status == 'Inactive'" type="submit"
                         class="btn btn-default other-user-buttons" ng-click="publishAdAgain(ad.id)">Publish Again</button>
                 <button ng-if="ad.status == 'Inactive'" type="submit"

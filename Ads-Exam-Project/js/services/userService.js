@@ -134,6 +134,25 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
         return resource;
     }
 
+    function editAd(id) {
+        var headers = authentication.getHeaders();
+        var resource = $resource(baseServiceUrl + 'user/ads/' + id, null,
+            {
+                save: {
+                    method: 'PUT',
+                    headers: headers
+                }
+            })
+            .save();
+
+        resource.$promise
+            .then(function(data) {
+                handleSuccess(data);
+            });
+
+        return resource;
+    }
+
     function handleSuccess(response) {
         return(response.data);
     }
@@ -145,6 +164,7 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
         deleteAd: deleteAd,
         publishAdAgain: publishAdAgain,
         getUserAdById: getUserAdById,
+        editAd: editAd,
         handleSuccess: handleSuccess
     }
 }]);

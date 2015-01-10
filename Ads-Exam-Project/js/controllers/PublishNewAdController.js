@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('PublishNewAdController', ['$scope', 'categoriesData', 'townsData', 'userService',
-            function($scope, categoriesData, townsData, userService) {
+app.controller('PublishNewAdController', ['$scope', '$location', 'categoriesData', 'townsData', 'userService',
+            function($scope, $location, categoriesData, townsData, userService) {
 
     $scope.adData = {townId: null, categoryId: null};
 
@@ -17,16 +17,11 @@ app.controller('PublishNewAdController', ['$scope', 'categoriesData', 'townsData
             $scope.towns = data;
         });
 
-    $scope.publishAd = function() {
-        userService.createNewAd(adData,
-            function success() {
-                // TODO: show “success” info message
+    $scope.publishAd = function(adData) {
+        userService.createNewAd(adData)
+            .$promise()
+            .then(function () {
                 $location.path("/user/ads");
-            },
-            function error(err) {
-                // TODO: show error message
-            }
-        );
-
+            });
     };
 }]);

@@ -21,7 +21,11 @@ app.controller('PublishNewAdController', ['$scope', '$location', 'categoriesData
         userService.createNewAd(adData)
             .$promise()
             .then(function () {
+                notifyService.showInfo("Advertisement submitted for approval. Once approved, it will be published.");
                 $location.path("/user/ads");
+            },
+            function (serverError) {
+                notifyService.showError("Publishing ad failed:", serverError);
             });
     };
 }]);

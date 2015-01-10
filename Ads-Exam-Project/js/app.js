@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('softUniProject', ['ngRoute', 'ngResource', 'LocalStorageModule', 'ui.bootstrap.pagination']);
+var app = angular.module('softUniProject', ['ngRoute', 'ngResource', 'LocalStorageModule', 'ui.bootstrap']);
 
 app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');
 

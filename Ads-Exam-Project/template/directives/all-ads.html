@@ -44,12 +44,13 @@
                 </div>
             </div>
         </div>
-        <pagination page="startPage"
-                    items-per-page="pageSize"
-                    total-items="adsData.numItems"
-                    boundary-links="true"
+        <pagination total-items="numItems"
                     ng-change="pageChanged()"
-                    ng-model="currentPage">
+                    items-per-page="itemsPerPage"
+                    ng-model="currentPage"
+                    max-size="5"
+                    class="pagination"
+                    boundary-links="true">
         </pagination>
     </div>
 </div>

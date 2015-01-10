@@ -96,6 +96,44 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
         return resource;
     }
 
+    function publishAdAgain(id) {
+        var headers = authentication.getHeaders();
+        var resource = $resource(baseServiceUrl + 'user/ads/publishagain/' + id, null,
+            {
+                save: {
+                    method: 'PUT',
+                    headers: headers
+                }
+            })
+            .save();
+
+        resource.$promise
+            .then(function(data) {
+                handleSuccess(data);
+            });
+
+        return resource;
+    }
+
+    function getUserAdById(id) {
+        var headers = authentication.getHeaders();
+        var resource = $resource(baseServiceUrl + 'user/ads/' + id, null,
+            {
+                save: {
+                    method: 'GET',
+                    headers: headers
+                }
+            })
+            .save();
+
+        resource.$promise
+            .then(function(data) {
+                handleSuccess(data);
+            });
+
+        return resource;
+    }
+
     function handleSuccess(response) {
         return(response.data);
     }
@@ -105,11 +143,8 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', fun
         getUserAds: getUserAds,
         deactivateAd: deactivateAd,
         deleteAd: deleteAd,
+        publishAdAgain: publishAdAgain,
+        getUserAdById: getUserAdById,
         handleSuccess: handleSuccess
     }
 }]);
-
-
-//publishAgainAd: function (id, success, error) {
-//    // TODO
-//}

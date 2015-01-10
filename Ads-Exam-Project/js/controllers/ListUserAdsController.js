@@ -37,4 +37,21 @@ app.controller('ListUserAdsController', ['$scope', 'userService', 'notifyService
                 getUserAds();
             });
     };
+
+    $scope.publishAdAgain = function (id){
+        userService.publishAdAgain(id)
+            .$promise
+            .then(function () {
+                notifyService.showInfo("Ad published again successfully.");
+                getUserAds();
+            });
+    };
+
+    $scope.getUserAdById = function (id){
+        userService.getUserAdById(id)
+            .$promise
+            .then(function (data) {
+                $scope.requestedUserAd = data;
+            });
+    };
 }]);

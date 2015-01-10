@@ -1,35 +1,62 @@
 'use strict';
 
-app.factory('userService',
-    function ($http, baseServiceUrl, authService) {
-        return {
-            createNewAd: function (adData, success, error) {
-                var request = {
+app.factory('userService', ['$resource', 'baseServiceUrl', 'authentication', function($resource, baseServiceUrl, authentication) {
+
+    function createNewAd(adData) {
+        var headers = authentication.getHeaders();
+        var resource = $resource(baseServiceUrl + 'user/ads', null,
+            {
+                save: {
                     method: 'POST',
-                    url: baseServiceUrl + '/api/user/ads',
-                    headers: authService.getAuthHeaders(),
-                    data: adData
-                };
-                $http(request).success(success).error(error);
-            },
+                    headers: headers
+                }
+            })
+            .save(adData);
 
-            getUserAds: function (params, success, error) {
-                var request = {
-                    method: 'GET',
-                    url: baseServiceUrl + '/api/user/ads',
-                    headers: authService.getAuthHeaders(),
-                    params: params
-                };
-                $http(request).success(success).error(error);
-            },
+        resource.$promise.then(function() {
+                    handleSuccess();
+                });
 
-            deactivateAd: function (id, success, error) {
-                // TODO
-            },
-
-            publishAgainAd: function (id, success, error) {
-                // TODO
-            }
-        }
+        return resource;
     }
-);
+
+    function handleSuccess(response) {
+        return(response.data);
+
+    }
+
+    //function handleErrorTypeTwo(response) {
+    //
+    //    if (!angular.isObject(response.data) || !response.data.message) {
+    //        return ($q.reject( "An unknown error occurred." ) );
+    //    }
+    //
+    //    // Otherwise, use expected error message.
+    //    return( $q.reject( response.data.modelState ) );
+    //
+    //}
+
+    return {
+        createNewAd: createNewAd,
+        handleSuccess: handleSuccess
+        //handleErrorTypeTwo: handleErrorTypeTwo
+    }
+}]);
+
+//getUserAds: function (params, success, error) {
+//    var request = {
+//        method: 'GET',
+//        url: baseServiceUrl + '/api/user/ads',
+//        headers: authService.getAuthHeaders(),
+//        params: params
+//    };
+//    $http(request).success(success).error(error);
+//},
+//
+//deactivateAd: function (id, success, error) {
+//    // TODO
+//},
+//
+//publishAgainAd: function (id, success, error) {
+//    // TODO
+//}

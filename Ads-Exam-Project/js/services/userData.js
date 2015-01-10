@@ -1,3 +1,5 @@
+'use strict';
+
 app.factory('userData', ['$resource', 'baseServiceUrl', 'authentication', function($resource, baseServiceUrl, authentication) {
 
     function userLogin(user) {

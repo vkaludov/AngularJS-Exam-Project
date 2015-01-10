@@ -10,8 +10,8 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', function($resource, baseS
         }
     });
 
-    function getAllAds(filterParams) {
-        return resource.get(filterParams);
+    function getAllAds(params) {
+        return resource.get(params);
     }
 
     function createNewAd(ad) {

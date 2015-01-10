@@ -25,10 +25,15 @@ app.factory('filter', function() {
         params = {};
     }
 
+    function setPageParams(pageParams) {
+        //TODO
+    }
+
     return{
         adsFilteredByCategory: adsFilteredByCategory,
         adsFilteredByTown: adsFilteredByTown,
         getFilterParams: getFilterParams,
-        clearFilterParams: clearFilterParams
+        clearFilterParams: clearFilterParams,
+        setPageParams: setPageParams
     }
 });

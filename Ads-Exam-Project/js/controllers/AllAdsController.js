@@ -1,6 +1,10 @@
 'use strict';
 
 app.controller('AllAdsController', ['$scope', 'adsData', 'filter', function($scope, adsData, filter) {
+    $scope.currentPage = 1;
+    $scope.startPage = 1;
+    $scope.pageSize = 10;
+
     function loadAllAds(filterParams) {
         filterParams = filterParams || {};
 
@@ -12,6 +16,10 @@ app.controller('AllAdsController', ['$scope', 'adsData', 'filter', function($sco
     }
 
     loadAllAds();
+
+    $scope.pageChanged = function () {
+        console.log("Raboti mama mu da iba!")
+    };
 
     $scope.$on('categoryClicked', function (event, category) {
         loadAllAds(filter.getFilterParams());

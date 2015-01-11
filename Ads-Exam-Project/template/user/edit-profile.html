@@ -9,17 +9,27 @@
         <div class="col-md-5">
             <div class="panel panel-default login-panel-modified">
                 <div class="panel-body login-form-margin">
-                    <h2 class="text-center"><strong>Login</strong></h2>
+                    <h2 class="text-center"><strong>Edit Profile</strong></h2>
                     <hr>
                     <form>
                         <div class="form-group input-div">
-                            <label for="inputUser" class="label-style">Username:</label>
-                            <input type="text" class="form-control form-control-modified" id="inputUser"
-                                   ng-model="user.username">
+                            <label for="name" class="label-style">Name:</label>
+                            <input type="text" class="form-control form-control-modified" id="name"
+                                   ng-model="user.name">
                         </div>
                         <div class="form-group input-div">
-                            <label for="inputPass" class="label-style">Password:</label>
-                            <input type="password" class="form-control form-control-modified" id="inputPass"
+                            <label for="email" class="label-style">Email:</label>
+                            <input type="email" class="form-control form-control-modified" id="email"
+                                   ng-model="user.password">
+                        </div>
+                        <div class="form-group input-div">
+                            <label for="phone" class="label-style">Phone:</label>
+                            <input type="text" class="form-control form-control-modified" id="phone"
+                                   ng-model="user.password">
+                        </div>
+                        <div class="form-group input-div">
+                            <label for="town" class="label-style">Town:</label>
+                            <input type="text" class="form-control form-control-modified" id="town"
                                    ng-model="user.password">
                         </div>
                         <button type="submit" class="btn btn-default login-button" ng-click="login(user)">Login</button>

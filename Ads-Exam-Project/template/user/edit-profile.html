@@ -1,0 +1,55 @@
+<page-header page-title="'Edit User Profile'"></page-header>
+
+<div class="container" id="main-div">
+    <div class="row">
+        <div class="col-md-2">
+            <logged-in-sidebar></logged-in-sidebar>
+        </div>
+
+        <div class="col-md-5">
+            <div class="panel panel-default login-panel-modified">
+                <div class="panel-body login-form-margin">
+                    <h2 class="text-center"><strong>Login</strong></h2>
+                    <hr>
+                    <form>
+                        <div class="form-group input-div">
+                            <label for="inputUser" class="label-style">Username:</label>
+                            <input type="text" class="form-control form-control-modified" id="inputUser"
+                                   ng-model="user.username">
+                        </div>
+                        <div class="form-group input-div">
+                            <label for="inputPass" class="label-style">Password:</label>
+                            <input type="password" class="form-control form-control-modified" id="inputPass"
+                                   ng-model="user.password">
+                        </div>
+                        <button type="submit" class="btn btn-default login-button" ng-click="login(user)">Login</button>
+                        <a href="#/register" class="register-link">Register here</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="panel panel-default login-panel-modified">
+                <div class="panel-body login-form-margin">
+                    <h2 class="text-center"><strong>Login</strong></h2>
+                    <hr>
+                    <form>
+                        <div class="form-group input-div">
+                            <label for="inputUser" class="label-style">Username:</label>
+                            <input type="text" class="form-control form-control-modified" id="inputUser"
+                                   ng-model="user.username">
+                        </div>
+                        <div class="form-group input-div">
+                            <label for="inputPass" class="label-style">Password:</label>
+                            <input type="password" class="form-control form-control-modified" id="inputPass"
+                                   ng-model="user.password">
+                        </div>
+                        <button type="submit" class="btn btn-default login-button" ng-click="login(user)">Login</button>
+                        <a href="#/register" class="register-link">Register here</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
